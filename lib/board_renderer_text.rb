@@ -9,9 +9,15 @@ class BoardRendererText
         8.times do |r|
             puts "----------------"
             8.times do |c|
-                print "#{board[[r, c]]}"
+                piece = board[[r, c]]
+                if piece.nil?
+                    print "  "
+                else
+                    print "#{board[[r, c]]}"
+                end
             end
             puts ""
         end
+        "----------------"
     end
 end
