@@ -1,17 +1,23 @@
+require_relative './bishop.rb'
+require_relative './king.rb'
+require_relative './knight.rb'
+require_relative './pawn.rb'
+require_relative './queen.rb'
+require_relative './rook.rb'
+
 class Board
     attr_reader :grid
-    
-    def grid
-        @grid
-    end
 
+    def self.start_chess
+        board = self.new
+        8.times do |c|
+            board[[1, c]] = Pawn.new(:black)
+        end
+        board
+    end
+    
     def initialize
-        @grid = [
-            ["X", "X", nil, "X"],
-            ["X", "X", nil, "X"],
-            ["X", "X", nil, "X"],
-            ["X", "X", nil, "X"],
-        ]
+        @grid = Array.new(8) { Array.new(8) }
     end
 
     def []=(location, piece)
