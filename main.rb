@@ -1,17 +1,18 @@
-require_relative './lib/bishop.rb'
+require_relative './lib/pieces.rb'
 require_relative './lib/board_renderer_text.rb'
 require_relative './lib/board.rb'
-require_relative './lib/king.rb'
-require_relative './lib/knight.rb'
-require_relative './lib/pawn.rb'
-require_relative './lib/queen.rb'
-require_relative './lib/rook.rb'
+require_relative './lib/piece.rb'
 
+b = Board.new
+b[[0, 0]] = Rook.new(b, [0,0], :black)
+b[[0, 0]].available_moves
 
-b = Board.start_chess
+piece = b[[0, 0]]
+puts piece.enemy?([0, 1])
+puts piece.enemy?([0, 0])
 
-text_board = BoardRendererText.new(b)
-puts text_board.render
+#text_board = BoardRendererText.new(b)
+#puts text_board.render
 
 #pawn = Pawn.new([0, 0 ], :black)
 #p pawn.to_s

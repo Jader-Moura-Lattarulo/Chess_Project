@@ -1,10 +1,6 @@
-class Queen
-    attr_reader :color
+require_relative './lib/piece.rb'
 
-    def initialize(color)
-        @color = color
-    end
-
+class Queen < Piece
     def to_s
         color == :black ? "♛ " : "♕ "
     end
