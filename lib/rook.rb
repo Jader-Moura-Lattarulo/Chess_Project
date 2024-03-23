@@ -1,5 +1,3 @@
-require_relative './lib/piece.rb'
-
 class Rook < Piece
     def to_s
         @color == :black ? "♜ " : "♖ "
@@ -23,6 +21,7 @@ class Rook < Piece
             if enemy?(loc)
                 moves << loc
                 break 
+            end
         end
     end
 

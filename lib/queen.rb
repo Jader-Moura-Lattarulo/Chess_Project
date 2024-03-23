@@ -1,5 +1,3 @@
-require_relative './lib/piece.rb'
-
 class Queen < Piece
     def to_s
         color == :black ? "♛ " : "♕ "

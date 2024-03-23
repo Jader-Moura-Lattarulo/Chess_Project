@@ -1,11 +1,10 @@
 require_relative './lib/pieces.rb'
 require_relative './lib/board_renderer_text.rb'
 require_relative './lib/board.rb'
-require_relative './lib/piece.rb'
 
 b = Board.new
 b[[0, 0]] = Rook.new(b, [0,0], :black)
-b[[0, 0]].available_moves
+p b[[0, 0]].available_moves
 
 piece = b[[0, 0]]
 puts piece.enemy?([0, 1])
