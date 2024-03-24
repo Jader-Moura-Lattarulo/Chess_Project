@@ -1,4 +1,4 @@
-require_relative './lib/pieces.rb'
+require_relative './pieces.rb'
 
 class Board
     attr_reader :grid

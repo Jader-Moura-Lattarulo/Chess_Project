@@ -1,14 +1,14 @@
-require_relative './lib/pieces.rb'
-require_relative './lib/board_renderer_text.rb'
-require_relative './lib/board.rb'
+require_relative './pieces.rb'
+require_relative './board_renderer_text.rb'
+require_relative './board.rb'
 
 b = Board.new
-b[[0, 0]] = Rook.new(b, [0,0], :black)
-p b[[0, 0]].available_moves
+b[[2, 2]] = King.new(b, [2,2], :black)
+p b[[2, 2]].available_moves
 
-piece = b[[0, 0]]
-puts piece.enemy?([0, 1])
-puts piece.enemy?([0, 0])
+#piece = b[[0, 0]]
+#puts piece.enemy?([0, 1])
+#puts piece.enemy?([0, 0])
 
 #text_board = BoardRendererText.new(b)
 #puts text_board.render
